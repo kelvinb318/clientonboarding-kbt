@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Client Onboarding
+  </title>
+
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    body {
+
+      margin: 0;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      background:
+        #f4f7fb;
+
+      color:
+        #1f2937;
+
+    }
+
+
+    .container {
+
+      width: 100%;
+
+      max-width: 760px;
+
+      margin:
+        50px auto;
+
+      padding:
+        20px;
+
+    }
+
+
+    .card {
+
+      background:
+        #ffffff;
+
+      border-radius:
+        12px;
+
+      padding:
+        35px;
+
+      box-shadow:
+        0 4px 18px
+        rgba(0, 0, 0, 0.08);
+
+    }
+
+
+    .header {
+
+      text-align:
+        center;
+
+      margin-bottom:
+        30px;
+
+    }
+
+
+    .header h1 {
+
+      margin-bottom:
+        10px;
+
+      font-size:
+        30px;
+
+      color:
+        #1d4ed8;
+
+    }
+
+
+    .header p {
+
+      margin:
+        0;
+
+      color:
+        #6b7280;
+
+      font-size:
+        16px;
+
+      line-height:
+        1.5;
+
+    }
+
+
+    .form-group {
+
+      margin-bottom:
+        20px;
+
+    }
+
+
+    label {
+
+      display:
+        block;
+
+      margin-bottom:
+        7px;
+
+      font-weight:
+        600;
+
+      color:
+        #374151;
+
+    }
+
+
+    .required {
+
+      color:
+        #dc2626;
+
+    }
+
+
+    input,
+    textarea,
+    select {
+
+      width:
+        100%;
+
+      padding:
+        13px;
+
+      border:
+        1px solid #d1d5db;
+
+      border-radius:
+        7px;
+
+      font-size:
+        15px;
+
+      font-family:
+        inherit;
+
+      background:
+        #ffffff;
+
+    }
+
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+
+      outline:
+        none;
+
+      border-color:
+        #2563eb;
+
+      box-shadow:
+        0 0 0 2px
+        rgba(37, 99, 235, 0.12);
+
+    }
+
+
+    textarea {
+
+      min-height:
+        140px;
+
+      resize:
+        vertical;
+
+    }
+
+
+    button {
+
+      width:
+        100%;
+
+      padding:
+        14px;
+
+      border:
+        none;
+
+      border-radius:
+        7px;
+
+      background:
+        #2563eb;
+
+      color:
+        #ffffff;
+
+      font-size:
+        16px;
+
+      font-weight:
+        600;
+
+      cursor:
+        pointer;
+
+      transition:
+        background 0.2s ease;
+
+    }
+
+
+    button:hover {
+
+      background:
+        #1d4ed8;
+
+    }
+
+
+    button:disabled {
+
+      background:
+        #9ca3af;
+
+      cursor:
+        not-allowed;
+
+    }
+
+
+    .status {
+
+      display:
+        none;
+
+      margin-top:
+        20px;
+
+      padding:
+        15px;
+
+      border-radius:
+        7px;
+
+      line-height:
+        1.5;
+
+    }
+
+
+    .status.success {
+
+      display:
+        block;
+
+      background:
+        #ecfdf5;
+
+      border:
+        1px solid #10b981;
+
+      color:
+        #065f46;
+
+    }
+
+
+    .status.error {
+
+      display:
+        block;
+
+      background:
+        #fef2f2;
+
+      border:
+        1px solid #ef4444;
+
+      color:
+        #991b1b;
+
+    }
+
+
+    .file-link {
+
+      display:
+        inline-block;
+
+      margin-top:
+        12px;
+
+      padding:
+        10px 15px;
+
+      background:
+        #2563eb;
+
+      color:
+        #ffffff;
+
+      text-decoration:
+        none;
+
+      border-radius:
+        6px;
+
+      font-weight:
+        600;
+
+    }
+
+
+    .file-link:hover {
+
+      background:
+        #1d4ed8;
+
+    }
+
+
+    .footer {
+
+      text-align:
+        center;
+
+      margin-top:
+        20px;
+
+      color:
+        #6b7280;
+
+      font-size:
+        13px;
+
+    }
+
+
+    @media (
+      max-width: 600px
+    ) {
+
+      .container {
+
+        margin:
+          20px auto;
+
+        padding:
+          10px;
+
+      }
+
+
+      .card {
+
+        padding:
+          22px;
+
+      }
+
+
+      .header h1 {
+
+        font-size:
+          25px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <div class="container">
+
+
+    <div class="card">
+
+
+      <div class="header">
+
+        <h1>
+          Client Onboarding
+        </h1>
+
+        <p>
+
+          Welcome!
+
+          Please complete the information
+          below so we can prepare your
+          onboarding profile.
+
+        </p>
+
+      </div>
+
+
+      <form
+        id="onboardingForm"
+      >
+
+
+        <!-- FIRST NAME -->
+
+        <div class="form-group">
+
+          <label for="firstName">
+
+            First Name
+
+            <span class="required">
+              *
+            </span>
+
+          </label>
+
+
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            placeholder="Enter your first name"
+            autocomplete="given-name"
+            required
+          >
+
+        </div>
+
+
+        <!-- LAST NAME -->
+
+        <div class="form-group">
+
+          <label for="lastName">
+
+            Last Name
+
+            <span class="required">
+              *
+            </span>
+
+          </label>
+
+
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            placeholder="Enter your last name"
+            autocomplete="family-name"
+            required
+          >
+
+        </div>
+
+
+        <!-- EMAIL -->
+
+        <div class="form-group">
+
+          <label for="email">
+
+            Email Address
+
+            <span class="required">
+              *
+            </span>
+
+          </label>
+
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          >
+
+        </div>
+
+
+        <!-- COMPANY -->
+
+        <div class="form-group">
+
+          <label for="companyName">
+
+            Company Name
+
+            <span class="required">
+              *
+            </span>
+
+          </label>
+
+
+          <input
+            type="text"
+            id="companyName"
+            name="companyName"
+            placeholder="Enter your company name"
+            autocomplete="organization"
+            required
+          >
+
+        </div>
+
+
+        <!-- PROJECT -->
+
+        <div class="form-group">
+
+          <label for="projectOverview">
+
+            Project Overview
+
+            <span class="required">
+              *
+            </span>
+
+          </label>
+
+
+          <textarea
+            id="projectOverview"
+            name="projectOverview"
+            placeholder="Tell us about your project, goals, or requirements..."
+            required
+          ></textarea>
+
+        </div>
+
+
+        <!-- LEARNING STYLE -->
+
+        <div class="form-group">
+
+          <label for="learningStyle">
+
+            Preferred Learning Style
+
+            <span class="required">
+              *
+            </span>
+
+          </label>
+
+
+          <select
+            id="learningStyle"
+            name="learningStyle"
+            required
+          >
+
+            <option value="">
+              -- Select a learning style --
+            </option>
+
+            <option value="Visual">
+              Visual
+            </option>
+
+            <option value="Auditory">
+              Auditory
+            </option>
+
+            <option value="Reading/Writing">
+              Reading/Writing
+            </option>
+
+            <option value="Kinesthetic">
+              Kinesthetic
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- SUBMIT -->
+
+        <button
+          type="submit"
+          id="submitButton"
+        >
+
+          Submit Onboarding Information
+
+        </button>
+
+
+      </form>
+
+
+      <!-- STATUS MESSAGE -->
+
+      <div
+        id="statusMessage"
+        class="status"
+      ></div>
+
+
+    </div>
+
+
+    <div class="footer">
+
+      Client Onboarding Portal
+
+    </div>
+
+
+  </div>
+
+
+  <script>
+
+
+    /********************************************************
+     * GOOGLE APPS SCRIPT WEB APP URL
+     *
+     * IMPORTANT:
+     * Replace the URL below with your deployed
+     * Google Apps Script Web App URL.
+     *
+     * It MUST end with /exec
+     ********************************************************/
+
+    const GOOGLE_APPS_SCRIPT_URL =
+      "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+
+
+    /********************************************************
+     * FORM ELEMENTS
+     ********************************************************/
+
+    const form =
+      document.getElementById(
+        "onboardingForm"
+      );
+
+
+    const submitButton =
+      document.getElementById(
+        "submitButton"
+      );
+
+
+    const statusMessage =
+      document.getElementById(
+        "statusMessage"
+      );
+
+
+    /********************************************************
+     * SHOW STATUS
+     ********************************************************/
+
+    function showStatus(
+      message,
+      type
+    ) {
+
+      statusMessage.className =
+        "status " + type;
+
+
+      statusMessage.innerHTML =
+        message;
+
+
+      statusMessage.style.display =
+        "block";
+
+    }
+
+
+    /********************************************************
+     * LOADING STATE
+     ********************************************************/
+
+    function setLoading(
+      isLoading
+    ) {
+
+      submitButton.disabled =
+        isLoading;
+
+
+      if (isLoading) {
+
+        submitButton.textContent =
+          "Submitting...";
+
+      } else {
+
+        submitButton.textContent =
+          "Submit Onboarding Information";
+
+      }
+
+    }
+
+
+    /********************************************************
+     * FORM SUBMISSION
+     ********************************************************/
+
+    form.addEventListener(
+      "submit",
+      async function(event) {
+
+        event.preventDefault();
+
+
+        statusMessage.style.display =
+          "none";
+
+
+        setLoading(true);
+
+
+        /****************************************************
+         * Collect form data
+         ****************************************************/
+
+        const formData = {
+
+          firstName:
+            document
+              .getElementById("firstName")
+              .value
+              .trim(),
+
+          lastName:
+            document
+              .getElementById("lastName")
+              .value
+              .trim(),
+
+          email:
+            document
+              .getElementById("email")
+              .value
+              .trim(),
+
+          companyName:
+            document
+              .getElementById("companyName")
+              .value
+              .trim(),
+
+          projectOverview:
+            document
+              .getElementById("projectOverview")
+              .value
+              .trim(),
+
+          learningStyle:
+            document
+              .getElementById("learningStyle")
+              .value
+
+        };
+
+
+        /****************************************************
+         * Client-side validation
+         ****************************************************/
+
+        if (
+
+          !formData.firstName ||
+
+          !formData.lastName ||
+
+          !formData.email ||
+
+          !formData.companyName ||
+
+          !formData.projectOverview ||
+
+          !formData.learningStyle
+
+        ) {
+
+          showStatus(
+
+            "<strong>Submission Error</strong>" +
+
+            "<br><br>" +
+
+            "Please complete all required fields.",
+
+            "error"
+
+          );
+
+
+          setLoading(false);
+
+          return;
+
+        }
+
+
+        /****************************************************
+         * Validate learning style
+         ****************************************************/
+
+        const validLearningStyles = [
+
+          "Visual",
+
+          "Auditory",
+
+          "Reading/Writing",
+
+          "Kinesthetic"
+
+        ];
+
+
+        if (
+          !validLearningStyles.includes(
+            formData.learningStyle
+          )
+        ) {
+
+          showStatus(
+
+            "<strong>Submission Error</strong>" +
+
+            "<br><br>" +
+
+            "Please select a valid learning style.",
+
+            "error"
+
+          );
+
+
+          setLoading(false);
+
+          return;
+
+        }
+
+
+        /****************************************************
+         * Validate Apps Script URL
+         ****************************************************/
+
+        if (
+
+          !GOOGLE_APPS_SCRIPT_URL ||
+
+          GOOGLE_APPS_SCRIPT_URL.indexOf(
+            "/exec"
+          ) === -1
+
+        ) {
+
+          showStatus(
+
+            "<strong>Configuration Error</strong>" +
+
+            "<br><br>" +
+
+            "The Google Apps Script Web App URL " +
+
+            "has not been configured correctly.",
+
+            "error"
+
+          );
+
+
+          setLoading(false);
+
+          return;
+
+        }
+
+
+        try {
+
+
+          /**************************************************
+           * Send data to Google Apps Script
+           **************************************************/
+
+          const response =
+            await fetch(
+
+              GOOGLE_APPS_SCRIPT_URL,
+
+              {
+
+                method:
+                  "POST",
+
+                redirect:
+                  "follow",
+
+                headers: {
+
+                  "Content-Type":
+                    "text/plain;charset=utf-8"
+
+                },
+
+                body:
+                  JSON.stringify(
+                    formData
+                  )
+
+              }
+
+            );
+
+
+          /**************************************************
+           * Read response as TEXT first.
+           *
+           * DO NOT use response.json().
+           **************************************************/
+
+          const responseText =
+            await response.text();
+
+
+          console.log(
+            "Apps Script HTTP status:",
+            response.status
+          );
+
+
+          console.log(
+            "Apps Script response:",
+            responseText
+          );
+
+
+          /**************************************************
+           * Check for empty response
+           **************************************************/
+
+          if (
+            !responseText ||
+            !responseText.trim()
+          ) {
+
+            throw new Error(
+
+              "Google Apps Script returned an empty response. " +
+
+              "Verify that the Web App is deployed correctly " +
+
+              "and that the URL ends with /exec."
+
+            );
+
+          }
+
+
+          /**************************************************
+           * Parse JSON manually
+           **************************************************/
+
+          let result;
+
+
+          try {
+
+            result =
+              JSON.parse(
+                responseText
+              );
+
+          } catch (
+            parseError
+          ) {
+
+            console.error(
+              "Invalid Apps Script response:",
+              responseText
+            );
+
+
+            throw new Error(
+
+              "Google Apps Script returned an invalid response: " +
+
+              responseText.substring(
+                0,
+                300
+              )
+
+            );
+
+          }
+
+
+          /**************************************************
+           * Check application response
+           **************************************************/
+
+          if (
+            !result.success
+          ) {
+
+            throw new Error(
+
+              result.message ||
+
+              "The onboarding submission could not be completed."
+
+            );
+
+          }
+
+
+          /**************************************************
+           * Build success message
+           **************************************************/
+
+          let successMessage =
+
+            "<strong>Thank you, " +
+
+            escapeHtml(
+              formData.firstName
+            ) +
+
+            "!</strong>" +
+
+            "<br><br>" +
+
+            "Your onboarding information has " +
+
+            "been successfully submitted." +
+
+            "<br><br>" +
+
+            "A welcome email has been sent to " +
+
+            "<strong>" +
+
+            escapeHtml(
+              formData.email
+            ) +
+
+            "</strong>.";
+
+
+          /**************************************************
+           * Google Drive file
+           **************************************************/
+
+          if (
+            result.clientFileUrl
+          ) {
+
+            successMessage +=
+
+              "<br><br>" +
+
+              "Your onboarding profile has " +
+
+              "been created." +
+
+              "<br>" +
+
+              "<a " +
+
+              "href=\"" +
+
+              escapeAttribute(
+                result.clientFileUrl
+              ) +
+
+              "\" " +
+
+              "target=\"_blank\" " +
+
+              "rel=\"noopener noreferrer\" " +
+
+              "class=\"file-link\"" +
+
+              ">" +
+
+              "View Your Onboarding Profile" +
+
+              "</a>";
+
+          }
+
+
+          /**************************************************
+           * Display success
+           **************************************************/
+
+          showStatus(
+
+            successMessage,
+
+            "success"
+
+          );
+
+
+          /**************************************************
+           * Reset form
+           **************************************************/
+
+          form.reset();
+
+
+        } catch (
+          error
+        ) {
+
+
+          console.error(
+            "Submission Error:",
+            error
+          );
+
+
+          showStatus(
+
+            "<strong>Submission Error</strong>" +
+
+            "<br><br>" +
+
+            escapeHtml(
+
+              error.message ||
+
+              "An unexpected error occurred."
+
+            ) +
+
+            "<br><br>" +
+
+            "Please try again or contact support.",
+
+            "error"
+
+          );
+
+
+        } finally {
+
+          setLoading(false);
+
+        }
+
+      }
+    );
+
+
+    /********************************************************
+     * ESCAPE HTML
+     ********************************************************/
+
+    function escapeHtml(
+      value
+    ) {
+
+      const div =
+        document.createElement(
+          "div"
+        );
+
+
+      div.textContent =
+        String(value);
+
+
+      return div.innerHTML;
+
+    }
+
+
+    /********************************************************
+     * ESCAPE HTML ATTRIBUTE
+     ********************************************************/
+
+    function escapeAttribute(
+      value
+    ) {
+
+      return String(value)
+
+        .replace(
+          /&/g,
+          "&amp;"
+        )
+
+        .replace(
+          /"/g,
+          "&quot;"
+        )
+
+        .replace(
+          /</g,
+          "&lt;"
+        )
+
+        .replace(
+          />/g,
+          "&gt;"
+        );
+
+    }
+
+
+  </script>
+
+
+</body>
+
+</html>
